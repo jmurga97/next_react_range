@@ -1,40 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Know Your Code Skills - Exercise 🚀
 
-## Getting Started
+This project is a React application built with Next.js that implements one component `<Range />` with two different behaviors: Normal/Continous Range or Fixed Range
 
-First, run the development server:
+## Setup
+
+Clone this repository
+
+Install the dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Execute the development server
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+# Probar en modo desarrollo
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Access the web app with: [http://localhost:8080](http://localhost:8080).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Exercise 1 - Normal Range
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Description
+The `<Range />` component provides a input range with customizable min and max values. Users can drag two bullets along the range line to select a range. Additionally, users can click on the currency number label values (min or max) to set a new value. The range is restricted between the min and max input values.
 
-## Learn More
+### Features
+- Custom range input component
+- Dragabble bullets for selecting range
+- Clickable currency number labels for setting new values
+- Range constraints between min and max values
+- Hover effects, use of Pointer Events and cursor changes for better user experience
+- Mocked HTTP service with HTTP Next.js API Routes
 
-To learn more about Next.js, take a look at the following resources:
+### Usage
+Access the component at `localhost:8080/exercise1`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Exercise 2 - Fixed Values Range
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Description
+The `<Range />` component provides a range input with a array of fixed values. Similar to Exercise 1, users can drag two bullets along the range line to select a range. However, in this case, currency values are not input changeable and are only displayed as labels.
 
-## Deploy on Vercel
+### Features
+- Custom range input component
+- Dragabble bullets for selecting range
+- Fixed range of bullet values
+- Range constraints between min and max values
+- Mocked HTTP service with HTTP Next.js API Routes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Usage
+Access the component at `localhost:8080/exercise2`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Testing
+The project includes unit tests for Range component and utils folder
+```bash
+npm run test
+```
