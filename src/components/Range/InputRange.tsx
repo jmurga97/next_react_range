@@ -1,8 +1,6 @@
-import { useEffect, useState, ChangeEvent } from "react";
-import { setInRange } from "../../utils/setInRange";
-import { useDebouncedCallback } from "use-debounce";
 import type { RangeLimit } from "@/types";
 import { useInputRange } from "@/hooks/useInputRange";
+
 type Props = {
     range: RangeLimit;
     setBullet: React.Dispatch<React.SetStateAction<number>>;
@@ -33,8 +31,7 @@ export const InputRange = ({
             <input
                 id={id}
                 type="text"
-                className={`bg-transparent ${!isFixed && "border-b-2"
-                    } text-white text-sm text-center w-10  py-1.5 `}
+                className={`bg-transparent ${!isFixed && "border-b-2"} text-white text-sm text-center w-10  py-1.5 `}
                 value={input}
                 onChange={handleInputChange}
                 readOnly={isFixed}
