@@ -25,8 +25,7 @@ const Layout = ({ children, title, description }: Props) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 {/* <meta name="robots" content="noindex"/> */}
             </Head>
-            <main className={`${ubuntu.className} text-white`}>
-                <div className="bg-[url('/background.svg')] bg-cover bg-center bg-fixed -z-10 fixed top-0 left-0 w-full h-full"></div>
+            <main className={`${ubuntu.className} text-black`}>
                 <Navbar />
                 {children}
                 <Footer/>

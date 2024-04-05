@@ -24,14 +24,11 @@ export const InputRange = ({
     const { input, handleInputChange } = useInputRange({ range, bullet, setBullet, id, bulletReference })
 
     return (
-        <div className="flex items-center justify-center gap-2">
-            <label htmlFor={id} className="block text-md font-medium text-white">
-                {label}
-            </label>
+        <div className="flex items-center justify-center text-black ml-2">
             <input
                 id={id}
                 type="text"
-                className={`bg-transparent ${!isFixed && "border-b-2"} text-white text-sm text-center w-10  py-1.5 `}
+                className={`bg-transparent text-sm text-center w-10 `}
                 value={input}
                 onChange={handleInputChange}
                 readOnly={isFixed}

@@ -3,13 +3,13 @@ import { setInFixedRange } from "@/utils/setInFixedRange";
 import { setInRange } from "@/utils/setInRange";
 import type { RangeLimit } from "@/types";
 
-type Props = {
+type Params = {
     range: RangeLimit;
     steps?: number[];
     isFixed?: boolean;
 };
 
-export const useRange = ({ isFixed, steps, range }: Props) => {
+export const useRange = ({ isFixed, steps, range }: Params) => {
     const sliderRef = useRef<HTMLDivElement>(null);
     const [bulletMin, setBulletMin] = useState(range.min);
     const [bulletMax, setBulletMax] = useState(range.max);
