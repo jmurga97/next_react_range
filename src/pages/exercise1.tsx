@@ -12,7 +12,7 @@ export default function Exercise1({ range }: Props<RangeLimit>) {
     const title = range ? `1. Continuos Range: ${range.min} - ${range.max} $` : 'Range missing'
     return (
         <Layout title="Exercise 1" description="A technical test made for MCA">
-            <main className={`flex h-[80dvh] flex-col items-center px-24`}>
+            <main className={`flex h-[80dvh] flex-col items-center px-4 md:px-24`}>
                 <RangeContainer title={title}>
                     <Range range={range} steps={[]}/>
                 </RangeContainer>

@@ -15,7 +15,7 @@ export default function Exercise2({ min,max, steps }: InferGetServerSidePropsTyp
     return (
         <Layout title="Exercise 2" description="A technical test made for MCA">
             <main
-                className={`flex h-[80dvh] flex-col items-center px-24`}
+                className={`flex h-[80dvh] flex-col items-center px-4 md:px-24`}
             >
                 <RangeContainer title={`2. Fixed Range: ${min} - ${max} $`}>
                     <Range range={{min,max}} steps={steps} isFixed/>
