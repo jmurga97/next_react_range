@@ -44,7 +44,7 @@ const Range = ({
         <div
           ref={sliderRef}
           onPointerMove={handleMouseMove}
-          className="w-[200px] md:w-[450px] h-12 flex items-center"
+          className="w-[200px] md:w-[450px] h-12 flex items-center touch-none"
         >
           <div className="relative w-full h-1 bg-black rounded-full]">
             <RangeBullets
