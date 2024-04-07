@@ -1,7 +1,7 @@
 import { InputRange } from "./InputRange";
 import { RangeBullets } from "./RangeBullets";
 import type { RangeLimit } from "@/types";
-import { getBulletPosition } from "../../utils/getBulletPosition";
+import { getBulletPosition } from "@/utils/getBulletPosition";
 import { useRange } from "@/hooks/useRange";
 
 type Props = {

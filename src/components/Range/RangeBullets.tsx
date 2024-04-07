@@ -22,6 +22,7 @@ export const RangeBullets = ({ isDragging, setIsDragging, bulletPosition, isFixe
 
   return (
       <div
+          data-testid="bullet"
           ref={bulletRef}
           onPointerDown={onMouseDown}
           onPointerUp={onMouseUp}

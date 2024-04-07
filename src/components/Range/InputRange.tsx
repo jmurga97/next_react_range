@@ -24,6 +24,7 @@ export const InputRange = ({
     return (
         <div className="flex items-center justify-center text-black ml-2">
             <input
+                data-testid="input-range"
                 id={id}
                 type="text"
                 className={`bg-transparent text-sm text-center w-10 `}
