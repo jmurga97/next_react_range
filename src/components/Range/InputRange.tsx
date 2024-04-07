@@ -4,7 +4,6 @@ import { useInputRange } from "@/hooks/useInputRange";
 type Props = {
     range: RangeLimit;
     setBullet: React.Dispatch<React.SetStateAction<number>>;
-    label: string;
     bullet: number;
     bulletReference: number;
     id: string;
@@ -14,7 +13,6 @@ type Props = {
 export const InputRange = ({
     range,
     setBullet,
-    label,
     bullet,
     bulletReference,
     id,

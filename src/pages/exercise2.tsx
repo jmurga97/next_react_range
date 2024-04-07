@@ -1,8 +1,9 @@
 import Layout from "@/layouts/layout";
 import RangeContainer from "@/layouts/RangeContainer";
 import Range from "@/components/Range";
+import { useState } from "react";
 import type { InferGetServerSidePropsType } from 'next'
-import type { FixedRange } from "@/types";
+import type { FixedRange, RangeLimit } from "@/types";
 
 interface Range {
     min:number,
@@ -12,13 +13,15 @@ interface Range {
 
 
 export default function Exercise2({ min,max, steps }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+    const [input, setInput] = useState<RangeLimit>({min,max})
+    const title = `2. Fixed Range: ${input.min} - ${input.max} $`
     return (
         <Layout title="Exercise 2" description="A technical test made for MCA">
             <main
                 className={`flex h-[80dvh] flex-col items-center px-4 md:px-24`}
             >
-                <RangeContainer title={`2. Fixed Range: ${min} - ${max} $`}>
-                    <Range range={{min,max}} steps={steps} isFixed/>
+                <RangeContainer title={title}>
+                    <Range range={{min,max}} steps={steps} setInput={setInput} isFixed/>
                 </RangeContainer>
             </main>
         </Layout>

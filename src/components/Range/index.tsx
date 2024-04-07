@@ -6,6 +6,7 @@ import { useRange } from "@/hooks/useRange";
 
 type Props = {
   range: RangeLimit;
+  setInput: (range: RangeLimit) => void;
   steps?: number[];
   isFixed?: boolean;
 };
@@ -14,7 +15,7 @@ const Range = ({
   range = { min: 0, max: 100 },
   steps,
   isFixed = false,
-
+  setInput
 }: Props) => {
   const {
     sliderRef,
@@ -27,18 +28,15 @@ const Range = ({
     setBulletMin,
     bulletMax,
     setBulletMax,
-  } = useRange({ range, steps, isFixed });
+  } = useRange({ range, steps, isFixed, setInput });
 
   return (
     <>
       <div className="flex flex-row gap-3">
-
-
         <InputRange
           isFixed={isFixed}
           range={range}
           id="min"
-          label="Min."
           bullet={bulletMin}
           bulletReference={bulletMax}
           setBullet={setBulletMin}
@@ -63,12 +61,10 @@ const Range = ({
             />
           </div>
         </div>
-
         <InputRange
           isFixed={isFixed}
           range={range}
           id="max"
-          label="Max."
           bullet={bulletMax}
           bulletReference={bulletMin}
           setBullet={setBulletMax}
