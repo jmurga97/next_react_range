@@ -10,14 +10,14 @@ type Props = {
     isFixed: boolean;
 };
 
-export const InputRange = ({
+export const InputRange: React.FC<Props> = ({
     range,
     setBullet,
     bullet,
     bulletReference,
     id,
     isFixed,
-}: Props) => {
+}) => {
 
     const { input, handleInputChange } = useInputRange({ range, bullet, setBullet, id, bulletReference })
 

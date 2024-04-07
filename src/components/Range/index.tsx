@@ -11,12 +11,12 @@ type Props = {
   isFixed?: boolean;
 };
 
-const Range = ({
+const Range: React.FC<Props> = ({
   range = { min: 0, max: 100 },
   steps,
   isFixed = false,
   setInput
-}: Props) => {
+}) => {
   const {
     sliderRef,
     handleMouseMove,

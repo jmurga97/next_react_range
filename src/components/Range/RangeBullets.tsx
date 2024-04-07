@@ -7,7 +7,7 @@ type Props = {
   isFixed: boolean;
 };
 
-export const RangeBullets = ({ isDragging, setIsDragging, bulletPosition, isFixed = false }: Props) => {
+export const RangeBullets: React.FC<Props> = ({ isDragging, setIsDragging, bulletPosition, isFixed = false }) => {
   const bulletRef = useRef<HTMLDivElement>(null);
 
   const onMouseDown: PointerEventHandler<HTMLDivElement> = (e) => {

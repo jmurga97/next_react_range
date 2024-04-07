@@ -1,9 +1,11 @@
-const RangeContainer = ({
+type Props = {
+  title: string,
+  children:React.ReactNode
+}
+
+const RangeContainer:React.FC<Props> = ({
   title,
   children,
-}: {
-  title: string;
-  children: React.ReactNode;
 }) => {
   return (
     <>

@@ -15,7 +15,7 @@ const poppins = Poppins({
     display: "swap",
 });
 
-const Layout = ({ children, title, description }: Props) => {
+const Layout: React.FC<Props> = ({ children, title, description }) => {
 
     return (
         <>

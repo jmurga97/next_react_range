@@ -3,6 +3,7 @@ import { ChangeEvent } from "react";
 import { setInRange } from "@/utils/setInRange";
 import { useDebouncedCallback } from "use-debounce";
 import type { RangeLimit } from "@/types";
+
 type Params = {
   range: RangeLimit;
   setBullet: React.Dispatch<React.SetStateAction<number>>;
