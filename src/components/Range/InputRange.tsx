@@ -8,6 +8,7 @@ type Props = {
     bulletReference: number;
     id: string;
     isFixed: boolean;
+    setInput: (range: RangeLimit) => void;
 };
 
 export const InputRange: React.FC<Props> = ({
@@ -17,9 +18,10 @@ export const InputRange: React.FC<Props> = ({
     bulletReference,
     id,
     isFixed,
+    setInput
 }) => {
 
-    const { input, handleInputChange } = useInputRange({ range, bullet, setBullet, id, bulletReference })
+    const { input, handleInputChange } = useInputRange({ range, bullet, setBullet, id, bulletReference, setInput })
 
     return (
         <div className="flex items-center justify-center text-black ml-2">

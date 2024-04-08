@@ -10,7 +10,9 @@ type Params = {
   bullet: number;
   bulletReference: number;
   id: string;
+  setInput: (range: RangeLimit) => void;
 };
+
 
 export const useInputRange = ({
   bullet,
@@ -18,38 +20,57 @@ export const useInputRange = ({
   id,
   setBullet,
   bulletReference,
+  setInput
 }: Params) => {
-  const [input, setInput] = useState<string | number>(bullet);
+  const [input, setInputRange] = useState<string | number>(bullet);
 
   useEffect(() => {
     if (bullet) {
-      setInput(bullet);
+      setInputRange(bullet);
+      if (id === 'min') {
+        setInput({
+          min: bullet,
+          max: bulletReference
+        })
+      } else {
+        setInput({
+          min: bulletReference,
+          max: bullet
+        })
+      }
     }
-  }, [bullet]);
+  }, [bullet, setInput, id, bulletReference]);
 
   const checkAndSetBullet = useDebouncedCallback((valueInRange: number) => {
     if (id === "min") {
-      valueInRange < bulletReference
-        ? setBullet(valueInRange)
-        : setBullet(range.min);
+      if (valueInRange < bulletReference) {
+        setBullet(valueInRange);
+        setInputRange(valueInRange)
+      } else {
+        setBullet(bulletReference - 5);
+        setInputRange(bulletReference - 5)
+      }
     }
     if (id === "max") {
-      valueInRange > bulletReference
-        ? setBullet(valueInRange)
-        : setBullet(range.min);
+      if (valueInRange > bulletReference) {
+        setBullet(valueInRange);
+        setInputRange(valueInRange)
+      } else {
+        setBullet(bulletReference + 5);
+        setInputRange(bulletReference + 5)
+      }
     }
-
   }, 350);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    const pattern = /^[0-9\b]+$/
+    const pattern = /^[0-9\b]+$/;
 
     // Me aseguro que el input sea únicamente numerico
-    if (value === '' || pattern.test(value)) {
+    if (value === "" || pattern.test(value)) {
       const valueInRange = setInRange(range, parseInt(value));
       checkAndSetBullet(valueInRange);
-      setInput(value);
+      setInputRange(value);
     }
   };
 

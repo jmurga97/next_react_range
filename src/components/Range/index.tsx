@@ -40,6 +40,7 @@ const Range: React.FC<Props> = ({
           bullet={bulletMin}
           bulletReference={bulletMax}
           setBullet={setBulletMin}
+          setInput={setInput}
         />
         <div
           ref={sliderRef}
@@ -68,6 +69,7 @@ const Range: React.FC<Props> = ({
           bullet={bulletMax}
           bulletReference={bulletMin}
           setBullet={setBulletMax}
+          setInput={setInput}
         />
       </div>
     </>
